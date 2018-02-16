@@ -28,5 +28,11 @@ describe "As a User" do
 
       expect(page).to have_content("Vending Average Price: $5.00")
     end
+
+    it "I can see the vending machines item count" do
+      visit snack_path(@snack)
+
+      expect(page).to have_content("Items Count: 2")
+    end
   end
 end
