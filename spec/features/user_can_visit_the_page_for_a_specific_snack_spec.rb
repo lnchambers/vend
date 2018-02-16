@@ -16,5 +16,11 @@ describe "As a User" do
       expect(page).to have_content("Celery Because")
       expect(page).to have_content("$4.00")
     end
+
+    it "I can see the vending machines of that snack" do
+      visit snack_path(@snack)
+
+      expect(page).to have_content("Bolivia")
+    end
   end
 end
