@@ -1,5 +1,5 @@
 <%= @snack.name %>: $<%= '%.2f' % @snack.price_format %>
 <% @snack.machines.each do |machine| %>
-  <%= machine.location %>
-  <%= machine.average_price_of_snacks %>
+  Location: <%= machine.location %>
+  Vending Average Price: $<%= '%.2f' % machine.average_price_of_snacks %>
 <% end %>

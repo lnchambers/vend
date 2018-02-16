@@ -22,5 +22,11 @@ describe "As a User" do
 
       expect(page).to have_content("Bolivia")
     end
+
+    it "I can see the vending machines average price" do
+      visit snack_path(@snack)
+
+      expect(page).to have_content("Vending Average Price: $5.00")
+    end
   end
 end
