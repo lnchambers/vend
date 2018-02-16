@@ -1,6 +1,10 @@
-<%= @snack.name %>: $<%= '%.2f' % @snack.price_format %>
+<%= @snack.name %>: $<%= '%.2f' % @snack.price_format %><br>
+Locations:<br>
+<ul>
 <% @snack.machines.each do |machine| %>
-  Location: <%= machine.location %>
-  Vending Average Price: $<%= '%.2f' % machine.average_price_of_snacks %>
-  Items Count: <%= machine.items_count %>
+  <li>
+    Location: <%= machine.location %>
+    Vending Average Price: $<%= '%.2f' % machine.average_price_of_snacks %>
+    Items Count: <%= machine.items_count %>
+  </li>
 <% end %>
