@@ -5,7 +5,7 @@ describe "As a User" do
     owner = Owner.create!(name: "Opakawagalaga")
     @vending = owner.machines.create!(location: "Bolivia")
     snack = Snack.create!(name: "Celery Because That is What is in Vending Machines", price: 850)
-    faux_snack = Snack.create!(name: "Bamboozle again!", price: 5000)
+    fake_snack_for_testing = Snack.create!(name: "Bamboozle again!", price: 5000)
     Stock.create!(machine: @vending, snack: snack)
   end
   describe "When I visit a specific vending machine page" do
