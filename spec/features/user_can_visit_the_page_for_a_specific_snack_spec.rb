@@ -7,6 +7,8 @@ describe "As a User" do
     @snack = Snack.create!(name: "Celery Because That is What is in Vending Machines", price: 400)
     @snack_2 = Snack.create!(name: "Whiskey Because That is What is in Vending Machines", price: 600)
     faux_snack = Snack.create!(name: "Bamboozle again!", price: 5000)
+    vending_2 = owner.machines.create!(location: "The Mars Bars")
+    Stock.create!(machine: vending_2, snack: @snack)
     Stock.create!(machine: @vending, snack: @snack)
     Stock.create!(machine: @vending, snack: @snack_2)
   end
@@ -22,6 +24,7 @@ describe "As a User" do
       visit snack_path(@snack)
 
       expect(page).to have_content("Bolivia")
+      expect(page).to have_content("The Mars Bars")
     end
 
     it "I can see the vending machines average price" do
